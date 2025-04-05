@@ -1,10 +1,12 @@
 // src/components/Layout/Layout.tsx
 import React, { ReactNode } from 'react';
+// Kept HEAD version (includes FloatingSOSButton import)
 import Header from './Header';
 import Footer from './Footer';
 import FloatingSOSButton from '../FloatingSOSButton'; // Import the SOS Button
 import { Box, Container } from '@mui/material';
 // Import useTheme only if you specifically need theme values here
+// (Removed conflicting block)
 
 // Define the props expected by the Layout component
 interface LayoutProps {
@@ -15,7 +17,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     // Use Box as the main container, setup flexbox for vertical layout
-    // Ensure this sx prop is complete and correct
+    // Kept HEAD version structure
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
 
       {/* Render the Header component at the top */}
@@ -41,7 +43,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Add the Floating SOS Button - it positions itself using 'fixed' */}
       <FloatingSOSButton />
 
-    </Box> // Ensure this closing tag exists
+    </Box> // Closing Box tag from HEAD version
+    // Removed conflicting block and duplicate closing tag
   );
 };
 

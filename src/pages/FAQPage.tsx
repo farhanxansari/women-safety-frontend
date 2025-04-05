@@ -1,4 +1,6 @@
 // src/pages/FAQPage.tsx
+// Removed merge conflict markers
+
 import React from 'react';
 import {
     Container, Typography, Accordion, AccordionSummary, AccordionDetails, Paper
@@ -6,7 +8,7 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import QuizIcon from '@mui/icons-material/Quiz'; // Icon for FAQ page
 
-// Define your FAQ content here - Added more questions
+// Define your FAQ content here - Kept HEAD version with more questions
 const faqs = [
     {
         q: 'How does the app detect potential threats?',
@@ -36,7 +38,7 @@ const faqs = [
         q: 'Does the app work without an internet connection?',
         a: 'Core features like AI analysis, real-time risk mapping, and receiving new alerts require an internet connection. Some basic functionalities, like accessing previously downloaded tips or manually triggering an SMS-based SOS (if configured), might work offline.'
     },
-    // --- Added FAQs ---
+    // --- Kept Added FAQs from HEAD ---
     {
         q: 'What happens if I accidentally trigger an SOS alert?',
         a: 'Most systems have a brief cancellation window after triggering an alert (e.g., 5-10 seconds). If you miss this window, it\'s best practice to immediately contact your trusted contacts and/or local authorities (if applicable) to inform them it was a false alarm.'
@@ -61,6 +63,7 @@ const faqs = [
         q: 'How can I report inaccurate information on the map or outdated tips?',
         a: 'Look for a "Feedback" or "Report Issue" option within the app settings or on the specific map/tip screen. Providing details helps us improve the accuracy of the information. (Note: This feature needs to be implemented).'
     }
+    // Removed conflicting marker from remote branch
 ];
 
 const FAQPage: React.FC = () => {
@@ -76,14 +79,17 @@ const FAQPage: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            // Kept HEAD version styling
             fontWeight: 'bold', // Added bold weight
             color: 'primary.dark' // Use a theme color
         }}
       >
+        {/* Kept HEAD version icon styling */}
         <QuizIcon sx={{ fontSize: '2.5rem', mr: 1, color: 'primary.main' }} />
         Frequently Asked Questions
       </Typography>
 
+      {/* Kept HEAD version Paper styling */}
       <Paper elevation={2} sx={{ p: { xs: 0, sm: 1 }, overflow: 'hidden' /* Ensure border radius applies cleanly */ }}>
           {/* Map through the faqs array to create Accordion components */}
           {faqs.map((faq, index) => (
@@ -92,7 +98,7 @@ const FAQPage: React.FC = () => {
               elevation={0} // Use elevation 0 for cleaner look inside Paper
               square // Remove rounded corners for seamless look
               sx={{
-                  // Add border styling for separation
+                  // Kept HEAD version border styling
                   borderBottom: '1px solid', // Only bottom border needed now
                   borderColor: 'divider',
                   // Removed &:not(:last-child) as only bottom border is applied
@@ -112,6 +118,7 @@ const FAQPage: React.FC = () => {
                 {/* Question Text */}
                 <Typography sx={{ fontWeight: 500, color: 'text.primary' }}>{faq.q}</Typography>
               </AccordionSummary>
+              {/* Kept HEAD version AccordionDetails styling */}
               <AccordionDetails sx={{ backgroundColor: 'background.default', px: { xs: 2, sm: 3}, py: 2 /* Add padding */ }}>
                 {/* Answer Text */}
                 <Typography color="text.secondary" sx={{ lineHeight: 1.7 }}>{faq.a}</Typography>
